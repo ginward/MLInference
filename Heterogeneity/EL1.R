@@ -16,9 +16,10 @@
 rm(list=ls(all=TRUE))
 vec.pac= c("foreign", "quantreg", "gbm", "glmnet",
            "MASS", "rpart", "doParallel", "sandwich", "randomForest",
-           "nnet", "matrixStats", "xtable", "readstata13", "car", "lfe", "doParallel",
+           "nnet", "matrixStats", "xtable", "readstata13", "car", "lfe", "doParallel", "parallel",
            "caret", "foreach", "multcomp","cowplot")
 
+lapply(vec.pac, install.packages, character.only = TRUE) 
 lapply(vec.pac, require, character.only = TRUE) 
 source("ML_Functions.R")
 ptm <- proc.time()

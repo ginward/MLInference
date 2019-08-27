@@ -19,7 +19,10 @@ vec.pac= c("foreign", "quantreg", "gbm", "glmnet",
            "nnet", "matrixStats", "xtable", "readstata13", "car", "lfe", "doParallel", "parallel",
            "caret", "foreach", "multcomp","cowplot")
 
-lapply(vec.pac, install.packages, character.only = TRUE) 
+install.lib<-vec.pac[!vec.pac %in% installed.packages()]
+for(lib in install.lib) install.packages(lib,dependencies=TRUE)
+sapply(load.lib,require,character=TRUE)
+
 lapply(vec.pac, require, character.only = TRUE) 
 source("ML_Functions.R")
 ptm <- proc.time()

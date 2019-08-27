@@ -21,7 +21,6 @@ vec.pac= c("foreign", "quantreg", "gbm", "glmnet",
 
 install.lib<-vec.pac[!vec.pac %in% installed.packages()]
 for(lib in install.lib) install.packages(lib,dependencies=TRUE)
-sapply(load.lib,require,character=TRUE)
 
 lapply(vec.pac, require, character.only = TRUE) 
 source("ML_Functions.R")
